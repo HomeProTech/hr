@@ -25,7 +25,7 @@ class HrEmployee(models.Model):
                 ) + ' %s' % self.id,
             }).id
         else:
-            self.calendar_id.attendance_ids.unlink()
+            self.calendar_id.attendance_ids.sudo().unlink()
         vals_list = []
         for line in self.calendar_ids:
             for calendar_line in line.calendar_id.attendance_ids:
@@ -37,7 +37,7 @@ class HrEmployee(models.Model):
                     'date_from': line.date_start,
                     'date_to': line.date_end,
                 }))
-        self.calendar_id.attendance_ids = vals_list
+        self.calendar_id.sudo().update({"attendance_ids": vals_list})
 
 
 class HrEmployeeCalendar(models.Model):
