@@ -1,0 +1,13 @@
+---Models in module 'hr_skill'---
+---Fields in module 'hr_skill'---
+hr_skill     / hr.employee.skill        / _order (False)                : NEW
+hr_skill     / hr.employee.skill        / complete_name (char)          : NEW isfunction: function, stored
+hr_skill     / hr.skill                 / _order (False)                : NEW
+hr_skill     / hr.skill                 / complete_name (char)          : NEW isfunction: function, stored
+hr_skill     / hr.skill                 / parent_left (integer)         : DEL
+hr_skill     / hr.skill                 / parent_path (char)            : NEW
+hr_skill     / hr.skill                 / parent_right (integer)        : DEL
+---XML records in module 'hr_skill'---
+NEW ir.model.access: hr_skill.access_employee_skill_all
+NEW ir.model.access: hr_skill.access_hr_skill_all
+DEL ir.model.access: hr_skill.access_hr_skill

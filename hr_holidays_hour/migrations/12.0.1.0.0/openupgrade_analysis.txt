@@ -1,0 +1,25 @@
+---Models in module 'hr_holidays_hour'---
+---Fields in module 'hr_holidays_hour'---
+hr_holidays_hour / hr.employee              / holiday_ids (one2many)        : DEL relation: hr.holidays
+hr_holidays_hour / hr.employee              / leaves_count (integer)        : DEL mode: modify
+hr_holidays_hour / hr.employee              / remaining_hours_ids (one2many): DEL relation: hr.holidays.remaining.leaves.user
+hr_holidays_hour / hr.holidays              / number_of_hours_temp (float)  : DEL
+hr_holidays_hour / hr.holidays              / virtual_hours (float)         : DEL
+hr_holidays_hour / hr.holidays              / working_hours (float)         : DEL
+hr_holidays_hour / hr.leave.allocation      / number_of_hours (float)       : NEW isfunction: function, stored
+---XML records in module 'hr_holidays_hour'---
+DEL ir.model.access: hr_holidays.access_hr_holydays_status_employee
+DEL ir.model.access: hr_holidays_hour.access_resource_calendar [renamed to tko_web_sessions_management module]
+DEL ir.model.access: hr_holidays_hour.access_resource_calendar_attendance [renamed to tko_web_sessions_management module]
+NEW ir.ui.view: hr_holidays_hour.hr_leave_report_tree
+NEW ir.ui.view: hr_holidays_hour.view_employee_form_leave_inherit
+DEL ir.ui.view: hr_holidays_hour.edit_holiday_new_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_evaluation_report_graph_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_holiday_allocation_tree_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_holiday_graph
+DEL ir.ui.view: hr_holidays_hour.view_holiday_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_holiday_pivot
+DEL ir.ui.view: hr_holidays_hour.view_holiday_simple_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_holiday_status_tree_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_hr_holidays_remaining_leaves_user_graph_inherit_leave_hours
+DEL ir.ui.view: hr_holidays_hour.view_hr_holidays_remaining_leaves_user_tree_inherit_leave_hours
